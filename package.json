@@ -1,14 +1,22 @@
 {
   "name": "cruise-ships",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --verbose --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "jest": "^25.2.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/56aint/cruise-ships.git"
+  },
+  "bugs": {
+    "url": "https://github.com/56aint/cruise-ships/issues"
+  },
+  "homepage": "https://github.com/56aint/cruise-ships#readme",
+  "description": ""
 }
