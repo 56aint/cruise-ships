@@ -1,28 +1,20 @@
-//const shipMaxCapcity = 500;
 
 class Ship {
-  constructor(name) {
-    this._name = name;
-    this._startingPoint = 'Hello, welcome to Dover! Your cruise starts here (˃̣̣̥ w ˂̣̣̥)';
-    //this.passenger = 0;
-    //this.seats = 400;
+  constructor(currentPort) {
+    this._currentPort = currentPort;
   }
 
-  get startingPoint() {
-    return this._startingPoint;
+  get currentPort() {
+    return this._currentPort;
   }
-
-  /*getPassenger(x) {
-    this.passenger += x;
-    if (this.seats < shipMaxCapcity && this.passenger < 400) {
-      return 'Hop-on friend!'
-    }
-  }*/
   
   setSail() {
-    this._startingPoint = !this._startingPoint
+    this._currentPort = !this._currentPort
   }
 
+  dock(portName) {
+    return this._currentPort = portName;
+  }
 
 
 };

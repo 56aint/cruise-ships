@@ -1,4 +1,5 @@
 const Ship = require('./Ship');
+const Port = require('./Port');
 
 
 
@@ -8,5 +9,6 @@ const Ship = require('./Ship');
 
 
 module.exports = {
-  Ship
+  Ship,
+  Port
 }
