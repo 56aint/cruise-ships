@@ -1,6 +1,7 @@
+//import Itinerary from './Itinerary';
 const Ship = require('./Ship');
 const Port = require('./Port');
-
+const Itinerary = require('./Itinerary');
 
 
 
@@ -10,5 +11,6 @@ const Port = require('./Port');
 
 module.exports = {
   Ship,
-  Port
+  Port,
+  Itinerary
 }
