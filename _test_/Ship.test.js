@@ -1,11 +1,9 @@
-//import Itinerary from '../src/Itinerary';
-//import Itinerary from '../src/Itinerary';
 const { Port } = require("../src/");
 const { Ship } = require("../src/");
 //const { Itinerary } = require('..src/'); didnt work
 const { Itinerary } = require("../src/");
 
-describe('Itinerary function/class', () => {
+describe('Ship function/class', () => {
   let dover;
   let ship;
   let calais;
@@ -13,7 +11,6 @@ describe('Itinerary function/class', () => {
 
   beforeEach(() => {
     dover = new Port('Dover');
-    //ship = new Ship(dover);
     calais = new Port('Calais');
     route = new Itinerary([dover, calais]);
     ship = new Ship(route);
@@ -32,15 +29,17 @@ describe('Itinerary function/class', () => {
     it('that ship can set sail', () => {
       ship.setSail();
       expect(ship.currentPort).toBeFalsy();
+      expect(dover.ships).not.toContain(ship);
     });
   });
 
-  describe('ship dock', () =>{
+  describe('ship dock', () => {
     it('that ship can dock at a different ports', () => {
       ship.setSail();
       ship.dock();
       expect(ship.currentPort).toBe(calais);
       expect(ship.previousPort).toBe(dover);
+      expect(calais.ships).toContain(ship);
     });
   });
 
@@ -48,7 +47,13 @@ describe('Itinerary function/class', () => {
     it('that Ship cannot sail further than its route', () => {
       ship.setSail();
       ship.dock();
-      expect( () => ship.setSail()).toThrowError('This is the end of your route');
+      expect(() => ship.setSail()).toThrowError('This is the end of your route');
+    });
+  });
+
+  describe('ships on instantiation', () => {
+    it('that ships get added to ports on instantiation', () => {
+      expect(dover.ships).toContain(ship);
     });
   });
 });

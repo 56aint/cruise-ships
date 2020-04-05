@@ -4,11 +4,8 @@ class Ship {
     this.route = route;
     this.currentPort = route.ports[0];
     this.previousPort = null;
+    this.currentPort.addShip(this);
   }
-
-  //get currentPort() {
-   // return this.currentPort;
-  //}
   
   setSail() {
     const route = this.route;
@@ -20,12 +17,14 @@ class Ship {
 
     this.previousPort = this.currentPort;
     this.currentPort = null;
+    this.previousPort.removeShip(this);
   }
 
   dock() {
     const route = this.route;
     const previousPortIndex = route.ports.indexOf(this.previousPort);
     this.currentPort = route.ports[previousPortIndex + 1];
+    this.currentPort.addShip(this);
   }
 
 
