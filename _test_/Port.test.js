@@ -9,6 +9,7 @@ describe('Port object function/class', () => {
 
   beforeEach(() => {
     dover = new Port('Dover');
+    //dover = jest.fn();
     portNovo = new Port('portNovo');
     portChile = new Port('portChile');
   });
@@ -35,7 +36,8 @@ describe('Port object function/class', () => {
 
 
     beforeEach(() => {
-      randoMship = {};
+      //randoMship = {};
+      randoMship = jest.fn()
       dover.addShip(randoMship);
       portChile.addShip(randoMship);
       
@@ -44,7 +46,8 @@ describe('Port object function/class', () => {
 
       titanic = {};
       queenMarry = {};
-      covidVirus = {};
+      //covidVirus = {};
+      covidVirus = jest.fn();
       life = {};
       dover.addShip(titanic);
       dover.addShip(covidVirus);

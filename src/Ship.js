@@ -1,4 +1,3 @@
-
 class Ship {
   constructor(route) {
     this.route = route;
@@ -7,13 +6,13 @@ class Ship {
     this.currentPort.addShip(this);
     //this.previousPort.removeShip(this);
   }
-  
+
   setSail() {
     const route = this.route;
     const currentPortIndex = route.ports.indexOf(this.currentPort);
 
-    if(currentPortIndex === (route.ports.length - 1)) {
-      throw new Error('This is the end of your route');
+    if (currentPortIndex === route.ports.length - 1) {
+      throw new Error("This is the end of your route");
     }
 
     this.previousPort = this.currentPort;
@@ -27,12 +26,5 @@ class Ship {
     this.currentPort = route.ports[previousPortIndex + 1];
     this.currentPort.addShip(this);
   }
-
-
-};
+}
 module.exports = Ship;
-
-
-
-
-

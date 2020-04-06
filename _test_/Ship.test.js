@@ -11,9 +11,13 @@ describe('Ship function/class', () => {
 
   beforeEach(() => {
     dover = new Port('Dover');
+    //dover = jest.fn();
     calais = new Port('Calais');
     route = new Itinerary([dover, calais]);
+    //route = jest.fn();
     ship = new Ship(route);
+
+
   });
 
   describe('Ship constructor', () => {
