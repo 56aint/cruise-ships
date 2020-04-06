@@ -3,49 +3,73 @@ const { Port } = require('../src/');
 
 describe('Port object function/class', () => {
   let dover;
+  let portNovo;
+  let portChile;
 
 
   beforeEach(() => {
     dover = new Port('Dover');
-    
+    portNovo = new Port('portNovo');
+    portChile = new Port('portChile');
   });
 
 
   describe('Port object function/class', () => {
-    //const dover = new Port('Dover');
     it('that constructor Port returns an object', () => {
       expect(dover).toBeInstanceOf(Object);
     });
     it('that Port object has a name property', () => {
       expect(dover.name).toBe('Dover');
+      expect(portChile.name).toBe('portChile');
     });
   });
 
-  describe('addShip method', () => {
-    it('that docking ship is added to number of ships at the port', () => {
-      //const dover = new Port('Dover');
-      const randoMship = {};
+  describe('addShip and removeShip', () => {
+
+    let randoMship;
+    let anotherRandomShip;
+    let titanic;
+    let queenMarry;
+    let covidVirus;
+    let life;
+
+
+    beforeEach(() => {
+      randoMship = {};
       dover.addShip(randoMship);
-      expect(dover.ships).toContain(randoMship);
-    });
-  });
+      portChile.addShip(randoMship);
+      
+      anotherRandomShip = {};
+      portNovo.addShip(anotherRandomShip);
 
-  describe('removeShip method', () => {
-    it('that sailing ship is susbstracted from number of ships at the port', () => {
-      //ship.setSail()
-      const titanic = {};
-      const queenMarry = {};
-      const covidVirus = {};
-      const live = {};
-
+      titanic = {};
+      queenMarry = {};
+      covidVirus = {};
+      life = {};
       dover.addShip(titanic);
       dover.addShip(covidVirus);
       dover.addShip(queenMarry);
-      dover.addShip(live);
-      dover.removeShip(queenMarry);
-      dover.removeShip(covidVirus);
+      dover.addShip(life);
+    });
 
-      expect(dover.ships).toEqual[titanic, live]; //*
+    describe('addShip method', () => {
+      it('that docking ship is added to number of ships at the port', () => {
+        expect(dover.ships).toContain(randoMship);
+        expect(portChile.ships).toContain(randoMship);
+      });
+      it('that docking ship is added to number of ships at the port', () => {
+        expect(portNovo.ships).toContain(anotherRandomShip);
+      });
+    });
+
+    describe('removeShip method', () => {
+      it('that sailing ship is susbstracted from number of ships at the port', () => {
+
+        dover.removeShip(queenMarry);
+        dover.removeShip(covidVirus);
+
+        expect(dover.ships).toEqual[titanic, life]; //*
+      });
     });
   });
 });
