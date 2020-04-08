@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 class Port {
   constructor(name) {
     this._name = name;
@@ -5,17 +6,17 @@ class Port {
   }
 
   get name() {
+    // eslint-disable-next-line no-underscore-dangle
     return this._name;
   }
 
-  addShip(randoMship) {     //* watch randoMship( not 'ship')!!!*/
-    return this.ships.push(randoMship);
+  addShip(anyParam) { //* watch randoMship( not 'ship')  randoMship !!!*/ 
+    return this.ships.push(anyParam);
   }
 
-  removeShip(randoMship) {
-    return this.ships.splice(this.ships.findIndex(i => i.randoMship === randoMship), 1);
+  removeShip(anyShips) {
+    return this.ships.splice(this.ships.findIndex(i => i.anyShips === anyShips), 1);
   }
-
-};
+}
 
 module.exports = Port;

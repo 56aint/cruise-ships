@@ -4,7 +4,8 @@ class Ship {
     this.currentPort = route.ports[0];
     this.previousPort = null;
     this.currentPort.addShip(this);
-    //this.previousPort.removeShip(this);
+    // this.ships = []; initialised in Port
+    // this.previousPort.removeShip(this);
   }
 
   setSail() {
