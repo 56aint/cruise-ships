@@ -1,6 +1,6 @@
 // const { Port } = require("../src/");
 const { Ship } = require("../src");
-// const { Itinerary } = require('..src/'); didnt work
+// const { Itinerary } = require('..src/'); // single quote didnt work
 // const { Itinerary } = require("../src/");
 
 describe("Ship function/class", () => {
@@ -14,18 +14,18 @@ describe("Ship function/class", () => {
     dover = {
       name: "Dover",
       ship: [],
-      removeShip: jest.fn(),
-      addShip: jest.fn(),
+      removeShip: jest.fn(), //spy
+      addShip: jest.fn(),    //spy
     };
     // calais = new Port('Calais');
     calais = {
       name: "Calais",
       ship: [],
-      removeShip: jest.fn(),
-      addShip: jest.fn(),
+      removeShip: jest.fn(),  //spy
+      addShip: jest.fn(),     //spy
     };
     // route = new Itinerary([dover, calais]);
-    route = { ports: [dover, calais] };
+    route = { ports: [dover, calais] };  //stubbing out route
     ship = new Ship(route);
   });
 

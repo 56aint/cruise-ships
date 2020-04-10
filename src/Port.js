@@ -10,12 +10,12 @@ class Port {
     return this._name;
   }
 
-  addShip(anyParam) { //* watch randoMship( not 'ship')  randoMship !!!*/ 
-    return this.ships.push(anyParam);
+  addShip(anyParams) { //* watch anyParams( not 'ship') !!!*/ 
+    return this.ships.push(anyParams); //add ship(anyParams) to ships[]
   }
 
   removeShip(anyShips) {
-    return this.ships.splice(this.ships.findIndex(i => i.anyShips === anyShips), 1);
+    return this.ships.splice(this.ships.findIndex(i => i.anyShips === anyShips), 1); //find anyShips in the ships[] by index and remove/splice it
   }
 }
 
