@@ -19,18 +19,47 @@ describe("Port object function/class", () => {
     portNovo = new Port("portNovo");
     portChile = new Port("portChile");
 
-    // covidVirus = {};
-    covidVirus = jest.fn();
-    // randoMship = {};
-    randoMship = jest.fn();
-    // anotherRandomShip = {};
-    anotherRandomShip = jest.fn();
-    // titanic = {};
-    titanic = jest.fn();
-    // queenMarry = {};
-    queenMarry = jest.fn();
-    //livelyLife = {};
-    livelyLife = jest.fn();
+    covidVirus = { 
+      route: [
+        dover,
+        portNovo,
+        portChile
+      ]
+    };
+    randoMship = { 
+      route: [
+        dover,
+        portNovo,
+        portChile,
+        dover
+      ]
+    };
+    anotherRandomShip = { 
+      route: [
+        portNovo,
+        portChile,
+        dover
+      ]
+    };
+    titanic = { 
+      route: [
+        portNovo,
+        portChile
+      ]
+    };
+    queenMarry = { 
+      route: [
+        portChile,
+      ]
+    };
+    livelyLife = { 
+      route: [
+        portChile,
+        portNovo,
+        portChile,
+        dover
+      ]
+    };
     // life = {};
     //live = jest.fn();
   });
@@ -79,7 +108,10 @@ describe("Port object function/class", () => {
       expect(dover.ships).toContain(queenMarry);
       //expect(dover.ships).toContain(livelyLife);
       //expect(dover.ships).toContain(covidVirus);
-      //expect(dover.ships).toEqual([titanic, covidVirus, queenMarry]);
+      // console.log('QM', queenMarry);
+      // console.log('T', titanic);
+      // console.log('ll', livelyLife);
+      expect(dover.ships).toEqual([queenMarry, titanic, livelyLife]);
     });
   });
 });

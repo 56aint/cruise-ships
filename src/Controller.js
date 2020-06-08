@@ -1,0 +1,25 @@
+(function exportController() {
+  class Controller {
+    constructor() {
+      this.initialiseSea();
+    }
+
+    initialiseSea() {
+      const backgrounds = ["../images/water0.png", "../images/water1.png"];
+      let backgroundIndex = 0;
+      window.setInterval(() => {
+        document.querySelector("#viewport").style.backgroundImage = url(
+          `${backgrounds[backgroundIndex % backgrounds.length]}`
+        );
+        backgroundIndex += 1;
+      }, 1000);
+    }
+  }
+
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = Port;
+  } else {
+    window.Controller = Controller;
+  }
+})();
+//module.exports = Controller;

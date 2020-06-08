@@ -6,7 +6,8 @@
         "jest": true
     },
     "extends": [
-        "airbnb-base", "prettier"
+        "airbnb-base", "prettier",
+        "mcr-codes"
     ],
     "rules": { "prettier/prettier": "error",
         "quotes": ["error", "double"]
